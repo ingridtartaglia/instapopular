@@ -1,0 +1,42 @@
+<html ng-app="instapopular" ng-cloak>
+<head>
+    <title>#16 - Instapopular</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-controller="instapopularCtrl">
+
+    <nav class="navbar navbar-default navbar-fixed-top insta-navbar">
+        <div class="container">
+            <p class="navbar-text"><i class="fa fa-instagram"></i> Instapopular</p>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="insta-placeholder col-xs-6 col-sm-4 col-md-3" ng-repeat="media in medias | limitTo:24">
+                    <figure>
+			            <a ng-href="{{media.link}}" target="_blank">
+                            <img ng-src="{{media.images.standard_resolution.url}}" class="insta-photo">
+                        </a>
+			            <figcaption>
+                            <img ng-src="{{media.user.profile_picture}}" class="insta-avatar img-circle">
+                            <span class="insta-name">{{media.user.username}}</span>
+                            <span class="insta-likes"><i class="fa fa-heart"></i> {{media.likes.count}}</span>
+            			</figcaption>
+            		</figure>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+    </html>

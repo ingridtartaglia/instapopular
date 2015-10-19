@@ -1,0 +1,66 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 70px;
+}
+
+/* navbar */
+.navbar { margin: 0; }
+.navbar-default {
+    background: #3D6C92;
+    border-color: transparent;
+}
+.navbar-default .navbar-text {
+    color: white;
+    font-size: 2em;
+}
+
+/* main */
+.insta-placeholder {
+    border: 2px solid white;
+    padding: 0;
+}
+.insta-placeholder figure {
+	margin: 0;
+	position: relative;
+}
+.insta-placeholder figure .insta-photo {
+	max-width: 100%;
+	display: block;
+	position: relative;
+    z-index: 10;
+	transition: transform 0.4s;
+    padding: 0;
+}
+.insta-placeholder figure:hover .insta-photo {
+	transform: scale(0.4);
+}
+.insta-placeholder figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background: #4A3949;
+	color: white;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transform: scale(0.7);
+	backface-visibility: hidden;
+	transition: transform 0.4s, opacity 0.4s;
+}
+.insta-placeholder figure:hover figcaption {
+	transform: scale(1);
+	opacity: 1;
+}
+
+.insta-avatar {
+    width: 7%;
+    float:left;
+}
+.insta-name {
+    padding-left: 7px;
+    vertical-align: middle;
+}
+.insta-likes {
+    float: right;
+}
